@@ -1,8 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Sinopsis  from './pages/Info.jsx';
+import Layout  from './pages/Layout.jsx';
+import Inicio from './pages/Inicio.jsx';
 import reportWebVitals from './reportWebVitals';
+
+function App() {
+
+
+  return (
+
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Inicio />} />
+          <Route path="Sinopsis" element={<Sinopsis />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+    
+    
+  );
+}
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
